@@ -1,0 +1,49 @@
+<%- include('./partials/header') %>
+
+<% if(error.length > 0) { %>
+  <div class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-red-500 text-white py-2 px-4 rounded-md shadow-lg z-50">
+    <span><%= error %></span>
+  </div>
+<% } %>
+
+<div class="w-full h-screen flex items-center justify-center px-8 bg-rose-100">
+  <div class="w-full max-w-4xl bg-white rounded-lg shadow-lg flex">
+    <!-- Registration Form -->
+    <div class="w-1/2 p-8 border-r border-gray-300 flex flex-col justify-center">
+      <h3 class="text-3xl font-semibold mb-4">Welcome to <span class="font-sans hover:font-serif text-rose-900 font-bold italic tracking-wide">Choco Land</span></h3>
+      <h4 class="text-xl mb-6">Create Your Account</h4>
+      <form autocomplete="off" action="/users/register" method="post">
+        <input
+          class="bg-gray-200 block w-full px-4 py-3 border border-gray-300 rounded-md mb-4"
+          type="text" placeholder="Full Name" name="fullname" required>
+        <input
+          class="bg-gray-200 block w-full px-4 py-3 border border-gray-300 rounded-md mb-4"
+          type="email" placeholder="Email" name="email" required>
+        <input
+          class="bg-gray-200 block w-full px-4 py-3 border border-gray-300 rounded-md mb-6"
+          type="password" placeholder="Password" name="password" required>
+        <input
+          class="w-full px-4 py-3 bg-blue-500 text-white rounded-full cursor-pointer hover:bg-blue-600 transition"
+          type="submit" value="Create My Account">
+      </form>
+    </div>
+
+    <!-- Login Form -->
+    <div class="w-1/2 p-8 flex flex-col justify-center">
+      <h4 class="text-xl font-semibold mb-6">Login to Your Account</h4>
+      <form autocomplete="off" action="/users/login" method="post">
+        <input
+          class="bg-gray-200 block w-full px-4 py-3 border border-gray-300 rounded-md mb-4"
+          type="email" placeholder="Email" name="email" required>
+        <input
+          class="bg-gray-200 block w-full px-4 py-3 border border-gray-300 rounded-md mb-6"
+          type="password" placeholder="Password" name="password" required>
+        <input
+          class="w-full px-4 py-3 bg-blue-500 text-white rounded-full cursor-pointer hover:bg-blue-600 transition"
+          type="submit" value="Login">
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,27 @@
+<%- include('./partials/header') %>
+<% if(success.length > 0) { %>
+  <div class="fixed top-5 left-1/2 transform -translate-x-1/2 p-3 rounded-md bg-blue-500 shadow-lg z-50">
+    <span class="text-white font-semibold"><%= success %></span>
+  </div>
+<% } %>
+<div class="w-full h-screen flex items-start px-20 py-20 bg-gray-100">
+  <div class="w-full max-w-6xl mx-auto flex flex-col gap-5">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <% products.forEach(function(product) { %>
+        <div class="border border-gray-300 rounded-lg shadow-md bg-white overflow-hidden transition-transform transform hover:scale-105">
+          <div class="w-full h-48 flex items-center justify-center bg-[<%= product.bgcolor %>]">
+            <img class="h-32 object-contain" src="data:image/jpeg;base64,<%= product.image.toString('base64') %>" alt="<%= product.name %>">
+          </div>
+          <div class="p-4 flex flex-col gap-3 text-center bg-[<%= product.panelcolor %>] text-[<%= product.textcolor %>]">
+            <h3 class="text-lg font-semibold"><%= product.name %></h3>
+            <h4 class="text-xl font-bold">₹ <%= product.price %></h4>
+            <a class="mt-3 inline-block w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md hover:bg-gray-200 transition-colors" href="/addtocart/<%= product._id %>">
+              <i class="ri-add-line text-gray-600"></i>
+            </a>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+<%- include('./partials/footer') %>

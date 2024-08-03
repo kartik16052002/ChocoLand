@@ -25,4 +25,7 @@ router.get("/admin", function (req, res) {
   res.render("createproducts",{success});
 });
 
+router.get("/",function(req,res){
+  res.render("owner-login");
+})
 module.exports = router;

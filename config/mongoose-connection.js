@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const dbgr = require('debug')("development:mongoose");
 
-const mongoUri = process.env.MONGODB_URI;
+
 
 mongoose
-.connect(mongoUri)
+.connect("mongodb+srv://kartikchoudhary1605:kartik@chocoland.e388uu8.mongodb.net/?retryWrites=true&w=majority&appName=chocoland")
 .then(function(){
     dbgr("Connected");
 })

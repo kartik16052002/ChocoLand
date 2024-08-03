@@ -14,6 +14,8 @@ const indexRouter = require('./routes/index');
 const expressSession = require('express-session');
 const flash = require('connect-flash');
 
+const port = process.env.PORT || 3000;
+
 require("dotenv").config();
 
 app.use(express.json());
@@ -36,4 +38,7 @@ app.use("/products",productsRouter);
 app.use("/users",usersRouter);
 
 //  $env:NODE_ENV="development"
-app.listen(3000);
+// OZRM1j1qcwDChTWm
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });

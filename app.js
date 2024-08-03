@@ -31,6 +31,7 @@ app.use(flash());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname,"public")));
 app.set("view engine","ejs");
+app.set('views', path.join(__dirname, 'views'));
 
 app.use("/",indexRouter);
 app.use("/owners",ownersRouter);

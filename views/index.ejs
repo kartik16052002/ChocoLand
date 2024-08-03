@@ -7,9 +7,9 @@
 <% } %>
 
 <div class="w-full h-screen flex items-center justify-center px-8 bg-rose-100">
-  <div class="w-full max-w-4xl bg-white rounded-lg shadow-lg flex">
+  <div class="w-full max-w-4xl bg-white rounded-lg shadow-lg flex flex-col md:flex-row">
     <!-- Registration Form -->
-    <div class="w-1/2 p-8 border-r border-gray-300 flex flex-col justify-center">
+    <div class="w-full md:w-1/2 p-8 border-b md:border-b-0 md:border-r border-gray-300 flex flex-col justify-center">
       <h3 class="text-3xl font-semibold mb-4">Welcome to <span class="font-sans hover:font-serif text-rose-900 font-bold italic tracking-wide">Choco Land</span></h3>
       <h4 class="text-xl mb-6">Create Your Account</h4>
       <form autocomplete="off" action="/users/register" method="post">
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Login Form -->
-    <div class="w-1/2 p-8 flex flex-col justify-center">
+    <div class="w-full md:w-1/2 p-8 flex flex-col justify-center">
       <h4 class="text-xl font-semibold mb-6">Login to Your Account</h4>
       <form autocomplete="off" action="/users/login" method="post">
         <input
